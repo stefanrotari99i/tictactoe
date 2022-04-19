@@ -1,9 +1,7 @@
 var array = [0,0,0,0,0,0,0,0,0];
 var state=1;
 var array_practice=[0,0,0,0,0,0,0,0,0];
-
-
-
+var auto=false;
 //function is move left
 function is_move_left(){
     for(var i=0;i<9;i++){
@@ -14,7 +12,6 @@ function is_move_left(){
     return false;
 
 }
-
 function evaluateboard(){
     if(player_winning()){
         return -10;
@@ -24,9 +21,6 @@ function evaluateboard(){
     }
     return 0;
 }
-
-
-
 
 function minimax(depth, isMax)
 {
@@ -113,9 +107,6 @@ function findBestMove()
 	return bestMove;
 }
 
-
-
-
 function player_winning(){
         if(array[0]==1 && array[1]==1 && array[2]==1){
             return 1;
@@ -183,8 +174,6 @@ function computer_winning(){
           }
       return 0;   
 }    
-
-
 
 
 function checkState(){
@@ -284,85 +273,41 @@ if(state==2){
 
 }
 
-
 function change_sta(id){
     if(array[id]!=0){
         return;
     }
     if(state==1){
         array[id]=1;
-        switch(id){
-            case 0: $("#0 .game__item").addClass("game__item game__item-x");
-                    break;
-            case 1: $("#1 .game__item").addClass("game__item game__item-x");
-                    break;
-            case 2: $("#2 .game__item").addClass("game__item game__item-x");
-                    break;
-            case 3: $("#3 .game__item").addClass("game__item game__item-x");
-                    break;
-            case 4: $("#4 .game__item").addClass("game__item game__item-x");
-                    break;
-            case 5: $("#5 .game__item").addClass("game__item game__item-x");
-                    break;
-            case 6: $("#6 .game__item").addClass("game__item game__item-x");
-                    break;
-            case 7: $("#7 .game__item").addClass("game__item game__item-x");
-                    break;
-            case 8: $("#8 .game__item").addClass("game__item game__item-x");
-                    break;
-            default: alert("Error");        
-        }
+        $('#'+id+" .game__item").addClass("game__item game__item-x");
         checkState();
         state=2;
-        for(var i=0;i<9;i++){
-            array_practice[i]=array[i];
-        }
+        if(auto){
         let id_= findBestMove();
         array[id_]=2;
-        switch(id_){
-            case 0: $("#0 .game__item").addClass("game__item game__item-o");
-                    break;
-            case 1: $("#1 .game__item").addClass("game__item game__item-o");
-                    break;
-            case 2: $("#2 .game__item").addClass("game__item game__item-o");
-                    break;
-            case 3: $("#3 .game__item").addClass("game__item game__item-o");
-                    break;
-            case 4: $("#4 .game__item").addClass("game__item game__item-o");
-                    break;
-            case 5: $("#5 .game__item").addClass("game__item game__item-o");
-                    break;
-            case 6: $("#6 .game__item").addClass("game__item game__item-o");
-                    break;
-            case 7: $("#7 .game__item").addClass("game__item game__item-o");
-                    break;
-            case 8: $("#8 .game__item").addClass("game__item game__item-o");
-                    break;
-            default: alert("Error");        
-        }
+        $('#'+id_+" .game__item").addClass("game__item game__item-o");
+        checkState();
+        state=1;}
+            return;
+    }
+    if(state==2){
+        array[id]=2;
+        $('#'+id+" .game__item").addClass("game__item game__item-o");
         checkState();
         state=1;
+    return;
     }
-        
 }
 $(document).ready(function(){
     $(".btn--play").click(function(){
     state=1;
-    $("#0 .game__item").attr("class","game__item");
-    $("#1 .game__item").attr("class","game__item");
-    $("#2 .game__item").attr("class","game__item");
-    $("#3 .game__item").attr("class","game__item");
-    $("#4 .game__item").attr("class","game__item");
-    $("#5 .game__item").attr("class","game__item");
-    $("#6 .game__item").attr("class","game__item");
-    $("#7 .game__item").attr("class","game__item");
-    $("#8 .game__item").attr("class","game__item");
+    for(let i=0;i<9;i++)
+        $("#"+i+" .game__item").removeClass("game__item game__item-x game__item-o");
     array=[0,0,0,0,0,0,0,0,0];
-    $("#draw-alert").fadeOut(200);
-    $("#win-alert").fadeOut(200);
-    $("#lose-alert").fadeOut(200);
+    $("#draw-alert").is(":visible")?$("#draw-alert").fadeOut(200):"";
+    $("#won-alert").is(":visible")?$("#won-alert").fadeOut(200):"";
+    $("#lose-alert").is(":visible")?$("#lose-alert").fadeOut(200):"";
     });
-
    $("#0").click(function(){
        change_sta(0);
    });
