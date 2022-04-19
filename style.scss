@@ -1,0 +1,154 @@
+body {
+    background: #252399;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    font-family: 'Heebo', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+// Game
+
+.game {
+    width: 40vw;
+    height: 75vh;
+    background: linear-gradient(#28283c, #0e1322);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 10px 10px 0px #181e2e;
+
+    &__header {
+        text-align: center;
+        padding: 20px;
+        flex: 0 0 20%;
+    }
+
+    &__title {
+        font-size: 24px;
+        font-weight: 900;
+    }
+
+    &__wrapper {
+        padding: 10px 40px 50px 40px;
+        flex: 0 0 80%;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    &__item-wrapp {
+        background-color: #36364b;
+        border-radius: 12px;
+        flex: 0 0 30%;
+        display: grid;
+        place-content: center;
+        box-shadow: 7px 7px 0px #28283c;
+    }
+
+    &__item {
+        width: 70px;
+        height: 70px;
+
+    }
+
+    &__item--o {
+        border: 15px solid #6663dc;
+        border-radius: 50%;
+    }
+
+    &__item--x {
+        position: relative;
+        background: #fff;
+        width: 15px;
+        border-radius: 30px;
+        transform: rotate(45deg);
+
+        &::before {
+            content: "";
+            position: absolute;
+            background: #fff;
+            width: 15px;
+            height: 100%;
+            border-radius: 30px;
+            transform: rotate(-90deg);
+
+
+        }
+    }
+}
+
+.header {
+
+    &__statistics {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 40px;
+    }
+
+    &__user {
+        text-align: center;
+    }
+
+    &__user-name {
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    &__user-score {
+        font-size: 16px;
+        color: rgba(#ffff, .5);
+    }
+}
+
+.alert {
+    background: #0e1322;
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    z-index: 100;
+    display: none;
+
+    &__title {
+        font-size: 20px;
+    }
+
+    &__subtitle {
+        font-size: 15px;
+        color: rgba(#ffff, .8);
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
+}
+
+
+.btn {
+    background: #6663dc;
+    padding: 15px 20px;
+    border-radius: 30px;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+}

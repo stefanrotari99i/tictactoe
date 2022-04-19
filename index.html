@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="won-alert" class="alert">
+        <h3 class="alert__title">Congratulations!</h3>
+        <p class="alert__subtitle">You won</p>
+        <button class="btn">Play again</button>
+    </div>
+    <div id="lose-alert" class="alert">
+        <h3 class="alert__title">Bad news!</h3>
+        <p class="alert__subtitle">You lose</p>
+        <button class="btn">Play again</button>
+    </div>
+    <main class="main">
+        <div class="game">
+            <div class="game__header">
+                <h1 class="game__title">Tic Tac Toe</h1>
+                <div class="header__statistics">
+                    <div class="header__user">
+                        <h2 class="header__user-name">Stefan</h2>
+                        <p class="header__user-score">Wins: <span>1</span></p>
+                    </div>
+                    <div class="header__user">
+                        <h2 class="header__user-name">Stefan</h2>
+                        <p class="header__user-score">Wins: <span>1</span></p>
+                    </div>
+                </div>
+            </div>
+            <ul class="game__wrapper">
+                <li class="game__item-wrapp">
+                    <div class="game__item game__item--o"></div>
+                </li>
+                <li class="game__item-wrapp">
+                    <div class="game__item game__item--x"></div>
+                </li>
+                <li class="game__item-wrapp">
+                    <div class="game__item"></div>
+                </li>
+                <li class="game__item-wrapp">
+                    <div class="game__item"></div>
+                </li>
+                <li class="game__item-wrapp">
+                    <div class="game__item"></div>
+                </li>
+                <li class="game__item-wrapp">
+                    <div class="game__item"></div>
+                </li>
+                <li class="game__item-wrapp">
+                    <div class="game__item"></div>
+                </li>
+                <li class="game__item-wrapp">
+                    <div class="game__item"></div>
+                </li>
+                <li class="game__item-wrapp">
+                    <div class="game__item"></div>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
