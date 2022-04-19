@@ -346,6 +346,22 @@ function change_sta(id){
         
 }
 $(document).ready(function(){
+    $(".btn--play").click(function(){
+    state=1;
+    $("#0 .game__item").attr("class","game__item");
+    $("#1 .game__item").attr("class","game__item");
+    $("#2 .game__item").attr("class","game__item");
+    $("#3 .game__item").attr("class","game__item");
+    $("#4 .game__item").attr("class","game__item");
+    $("#5 .game__item").attr("class","game__item");
+    $("#6 .game__item").attr("class","game__item");
+    $("#7 .game__item").attr("class","game__item");
+    $("#8 .game__item").attr("class","game__item");
+    array=[0,0,0,0,0,0,0,0,0];
+    $("#draw-alert").fadeOut(200);
+    $("#win-alert").fadeOut(200);
+    $("#lose-alert").fadeOut(200);
+    });
 
    $("#0").click(function(){
        change_sta(0);
