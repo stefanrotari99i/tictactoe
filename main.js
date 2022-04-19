@@ -338,7 +338,7 @@ function change_sta(id){
                     break;
             case 8: $("#8 .game__item").addClass("game__item game__item-o");
                     break;
-            default: alert("Error");        
+            default: ;       
         }
         checkState();
         state=1;
@@ -360,27 +360,42 @@ $(document).ready(function(){
 
    $("#3").click(function(){
     change_sta(3);
-});
+    });
 
-$("#4").click(function(){
-    change_sta(4);
-});
+    $("#4").click(function(){
+        change_sta(4);
+    });
 
-$("#5").click(function(){
-    change_sta(5);
-});
+    $("#5").click(function(){
+        change_sta(5);
+    });
 
-$("#6").click(function(){
-    change_sta(6);
-});
+    $("#6").click(function(){
+        change_sta(6);
+    });
 
-$("#7").click(function(){
-    change_sta(7);
-});
+    $("#7").click(function(){
+        change_sta(7);
+    });
 
-$("#8").click(function(){
-    change_sta(8);
-});
+    $("#8").click(function(){
+        change_sta(8);
+    });
+
+    if($.cookie('game__username') == null) {
+        $('.alert--username').fadeIn(200);
+    } else {
+        let username = $.cookie('game__username');
+        $('#player-name-1').text(username);
+    }
+
+
+    $('#username-submit').on('click', function(){
+        let username = $('#username-input').val();
+        $.cookie('game__username', username);
+        $('#player-name-1').text(username);
+        $('.alert--username').fadeOut(200);
+    });
     
 });
 

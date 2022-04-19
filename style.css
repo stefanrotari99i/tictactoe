@@ -352,6 +352,7 @@ body::before {
 .btn--alternative {
   border-radius: 6px;
   padding: 10px 20px;
+  margin-top: 25px;
 }
 
 .player {
@@ -467,6 +468,10 @@ body::before {
   padding: 10px 15px;
   border-radius: 9px;
   width: 100%;
+  color: #fff;
+}
+.input:focus {
+  outline: none;
 }
 
 .input::-webkit-input-placeholder {

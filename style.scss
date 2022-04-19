@@ -247,6 +247,7 @@ body {
     &--alternative {
         border-radius: 6px;
         padding: 10px 20px;
+        margin-top: 25px;
     }
 }
 
@@ -357,7 +358,14 @@ body {
     padding: 10px 15px;
     border-radius: 9px;
     width: 100%;
+    color: #fff;
+
+    &:focus {
+        outline: none;
+    }
 }
+
+
 
 .input::placeholder {
     color: rgba(#ffff, .8);
