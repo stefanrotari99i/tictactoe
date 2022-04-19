@@ -231,6 +231,10 @@ body {
         font-weight: 400;
         margin-bottom: 20px;
     }
+
+    &--file {
+        display: none;
+    }
 }
 
 
@@ -247,6 +251,7 @@ body {
     &--alternative {
         border-radius: 6px;
         padding: 10px 20px;
+        margin-top: 25px;
     }
 }
 
@@ -332,6 +337,7 @@ body {
         border: 4px solid #fff;
         margin-top: -50px;
         margin-bottom: 20px;
+        cursor: pointer;
 
     }
 
@@ -357,7 +363,14 @@ body {
     padding: 10px 15px;
     border-radius: 9px;
     width: 100%;
+    color: #fff;
+
+    &:focus {
+        outline: none;
+    }
 }
+
+
 
 .input::placeholder {
     color: rgba(#ffff, .8);

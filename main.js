@@ -1,7 +1,7 @@
 var array = [0,0,0,0,0,0,0,0,0];
 var state=1;
 var array_practice=[0,0,0,0,0,0,0,0,0];
-var auto=false;
+var auto=true;
 //function is move left
 function is_move_left(){
     for(var i=0;i<9;i++){
@@ -285,6 +285,7 @@ function change_sta(id){
         if(auto){
         let id_= findBestMove();
         array[id_]=2;
+
         $('#'+id_+" .game__item").addClass("game__item game__item-o");
         checkState();
         state=1;}
@@ -324,27 +325,69 @@ $(document).ready(function(){
 
    $("#3").click(function(){
     change_sta(3);
-});
+    });
 
-$("#4").click(function(){
-    change_sta(4);
-});
+    $("#4").click(function(){
+        change_sta(4);
+    });
 
-$("#5").click(function(){
-    change_sta(5);
-});
+    $("#5").click(function(){
+        change_sta(5);
+    });
 
-$("#6").click(function(){
-    change_sta(6);
-});
+    $("#6").click(function(){
+        change_sta(6);
+    });
 
-$("#7").click(function(){
-    change_sta(7);
-});
+    $("#7").click(function(){
+        change_sta(7);
+    });
 
-$("#8").click(function(){
-    change_sta(8);
-});
+    $("#8").click(function(){
+        change_sta(8);
+    });
+
+    if($.cookie('game__username') == null) {
+        $('.alert--username').fadeIn(200);
+    } else {
+        let username = $.cookie('game__username');
+        $('#player-name-1').text(username);
+    }
+
+
+    $('#username-submit').on('click', function(){
+        let username = $('#username-input').val();
+        $.cookie('game__username', username);
+        $('#player-name-1').text(username);
+        $('.alert--username').fadeOut(200);
+    });
+
+    $('#user-avatar').on('click', function(){
+        $('.alert--file').fadeIn(200);
+    })
+
+    if($.cookie('user__avatar') == null) {
+        $("#player-avatar").attr("src", "/avatar.jpg");
+    } else {
+        $("#player-avatar").attr("src", $.cookie('user__avatar').substring(11));
+    }
     
-});
 
+    $('#photo-submit').on('click', function(){
+        let file = $('#photo-avatar').get(0).files[0];
+
+        if(file){
+            var reader = new FileReader();
+ 
+            reader.onload = function(){
+                $("#player-avatar").attr("src", reader.result);
+                let avatar = btoa(reader.result);
+                alert(avatar);
+                $.cookie('user__avatar', avatar);
+            }
+ 
+            reader.readAsDataURL(file);
+        }
+        $('.alert--file').fadeOut(200);
+    });
+});

@@ -32,19 +32,31 @@
     <div  class="alert alert--username">
         <h3 class="alert__title">Username</h3>
         <p class="alert__subtitle">Take a username to know who are you</p>
-        <form action="">
-            <input class="input" type="text" placeholder="Username">
-            <button class="btn btn--alternative">Submit</button>
-        </form>
+        <input id="username-input" class="input" type="text" placeholder="Username">
+        <button id="username-submit" class="btn btn--alternative">Submit</button>
+    </div>
+
+    <div  class="alert alert--file">
+        <h3 class="alert__title">Avatar</h3>
+        <p class="alert__subtitle">Load a photo for your avatar</p>
+        <input id="photo-avatar" class="input-file" type="file">
+        <button id="photo-submit" class="btn btn--alternative">Submit</button>
+    </div>
+
+    <div id="chose-alert" class="alert alert--chose">
+        <h3 class="alert__title">Chose your opponent!</h3>
+        <p class="alert__subtitle">Chose Player VS Ai or Player VS Player</p>
+        <button class="btn btn--ai">Computer</button>
+        <button class="btn btn--player">Another player</button>
     </div>
     <main class="main">
         <div class="player player--left">
             <span class="player__turn">Your turn</span>
-            <div class="player__avatar">
-                <img src="/avatar.jpg" alt="" class="player__img">
+            <div id="user-avatar" class="player__avatar">
+                <img id="player-avatar" src="/avatar.jpg" alt="" class="player__img">
             </div>
             <span class="player__title">Player 1</span>
-            <h3 class="player__name">SoloSuicide</h3>
+            <h3 id="player-name-1" class="player__name">NoName</h3>
             <div class="player__item">
                 <div class="player__o"></div>
             </div>
@@ -83,7 +95,7 @@
                     <img src="/avatar.jpg" alt="" class="player__img">
                 </div>
                 <span class="player__title">Player 1</span>
-                <h3 class="player__name">SoloSuicide</h3>
+                <h3 class="player__name">PC</h3>
                 <div class="player__item">
                     <div class="player__x">
                         <div class="player__x-line"></div>
@@ -93,6 +105,7 @@
             </div>
         </div>
     </main>
+    <script src="/jquery.cookie.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

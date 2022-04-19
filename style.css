@@ -338,6 +338,9 @@ body::before {
   font-weight: 400;
   margin-bottom: 20px;
 }
+.alert--file {
+  display: none;
+}
 
 .btn {
   background: #6663dc;
@@ -352,6 +355,7 @@ body::before {
 .btn--alternative {
   border-radius: 6px;
   padding: 10px 20px;
+  margin-top: 25px;
 }
 
 .player {
@@ -439,6 +443,7 @@ body::before {
   border: 4px solid #fff;
   margin-top: -50px;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 .player__img {
   width: 100%;
@@ -467,6 +472,10 @@ body::before {
   padding: 10px 15px;
   border-radius: 9px;
   width: 100%;
+  color: #fff;
+}
+.input:focus {
+  outline: none;
 }
 
 .input::-webkit-input-placeholder {
