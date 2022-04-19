@@ -412,6 +412,33 @@ $(document).ready(function(){
         $('#player-name-1').text(username);
         $('.alert--username').fadeOut(200);
     });
+
+    $('#user-avatar').on('click', function(){
+        $('.alert--file').fadeIn(200);
+    })
+
+    if($.cookie('user__avatar') == null) {
+        $("#player-avatar").attr("src", "/avatar.jpg");
+    } else {
+        $("#player-avatar").attr("src", $.cookie('user__avatar').substring(11));
+    }
     
+
+    $('#photo-submit').on('click', function(){
+        let file = $('#photo-avatar').get(0).files[0];
+
+        if(file){
+            var reader = new FileReader();
+ 
+            reader.onload = function(){
+                $("#player-avatar").attr("src", reader.result);
+                let avatar = btoa(reader.result);
+                $.cookie('user__avatar', avatar);
+            }
+ 
+            reader.readAsDataURL(file);
+        }
+        $('.alert--file').fadeOut(200);
+    });
 });
 

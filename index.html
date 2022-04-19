@@ -17,17 +17,17 @@
     <div id="won-alert" class="alert">
         <h3 class="alert__title">Congratulations!</h3>
         <p class="alert__subtitle">You won</p>
-        <button class="btn">Play again</button>
+        <button class="btn btn--play">Play again</button>
     </div>
     <div id="lose-alert" class="alert">
         <h3 class="alert__title">Bad news!</h3>
         <p class="alert__subtitle">You lose</p>
-        <button class="btn">Play again</button>
+        <button class="btn btn--play">Play again</button>
     </div>
     <div id="draw-alert" class="alert">
         <h3 class="alert__title">Good!</h3>
         <p class="alert__subtitle">Draw</p>
-        <button class="btn">Play again</button>
+        <button class="btn btn--play">Play again</button>
     </div>
     <div  class="alert alert--username">
         <h3 class="alert__title">Username</h3>
@@ -35,11 +35,18 @@
         <input id="username-input" class="input" type="text" placeholder="Username">
         <button id="username-submit" class="btn btn--alternative">Submit</button>
     </div>
+
+    <div  class="alert alert--file">
+        <h3 class="alert__title">Avatar</h3>
+        <p class="alert__subtitle">Load a photo for your avatar</p>
+        <input id="photo-avatar" class="input-file" type="file">
+        <button id="photo-submit" class="btn btn--alternative">Submit</button>
+    </div>
     <main class="main">
         <div class="player player--left">
             <span class="player__turn">Your turn</span>
-            <div class="player__avatar">
-                <img src="/avatar.jpg" alt="" class="player__img">
+            <div id="user-avatar" class="player__avatar">
+                <img id="player-avatar" src="/avatar.jpg" alt="" class="player__img">
             </div>
             <span class="player__title">Player 1</span>
             <h3 id="player-name-1" class="player__name">NoName</h3>
