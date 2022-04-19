@@ -299,15 +299,18 @@ function change_sta(id){
     }
 }
 $(document).ready(function(){
+
     $(".btn--play").click(function(){
     state=1;
     for(let i=0;i<9;i++)
-        $("#"+i+" .game__item").removeClass("game__item game__item-x game__item-o");
+        $("#"+i+" .game__item").removeClass("game__item-x game__item-o");
     array=[0,0,0,0,0,0,0,0,0];
     $("#draw-alert").is(":visible")?$("#draw-alert").fadeOut(200):"";
     $("#won-alert").is(":visible")?$("#won-alert").fadeOut(200):"";
     $("#lose-alert").is(":visible")?$("#lose-alert").fadeOut(200):"";
     });
+
+
    $("#0").click(function(){
        change_sta(0);
    });
