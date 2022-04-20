@@ -603,23 +603,23 @@ body::before {
 
 @-webkit-keyframes rotate3d {
   0% {
-    -webkit-transform: rotate3d(1, 1, 0, 270deg);
-            transform: rotate3d(1, 1, 0, 270deg);
+    -webkit-transform: rotate3d(1, 1, 0, 900deg) scale(2);
+            transform: rotate3d(1, 1, 0, 900deg) scale(2);
   }
   100% {
-    -webkit-transform: rotate3d(1, 1, 0, 45deg);
-            transform: rotate3d(1, 1, 0, 45deg);
+    -webkit-transform: rotate3d(1, 1, 0, 45deg) scale(1);
+            transform: rotate3d(1, 1, 0, 45deg) scale(1);
   }
 }
 
 @keyframes rotate3d {
   0% {
-    -webkit-transform: rotate3d(1, 1, 0, 270deg);
-            transform: rotate3d(1, 1, 0, 270deg);
+    -webkit-transform: rotate3d(1, 1, 0, 900deg) scale(2);
+            transform: rotate3d(1, 1, 0, 900deg) scale(2);
   }
   100% {
-    -webkit-transform: rotate3d(1, 1, 0, 45deg);
-            transform: rotate3d(1, 1, 0, 45deg);
+    -webkit-transform: rotate3d(1, 1, 0, 45deg) scale(1);
+            transform: rotate3d(1, 1, 0, 45deg) scale(1);
   }
 }
 .result {

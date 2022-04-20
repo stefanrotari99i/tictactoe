@@ -461,11 +461,11 @@ body {
   @keyframes rotate3d {
 
     0% {
-        transform: rotate3d(1, 1, 0, 270deg);
+        transform: rotate3d(1, 1, 0, 900deg) scale(2);
     }
 
     100% {
-    transform: rotate3d(1, 1, 0, 45deg);
+        transform: rotate3d(1, 1, 0, 45deg) scale(1);
     }
   }
 
