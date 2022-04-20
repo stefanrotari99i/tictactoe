@@ -50,20 +50,19 @@ body {
     border: 2px solid #9982e1;
     box-shadow: -1px -1px 200px #9982e1;
 
-    &::after {
-        content: "Won by David";
-        text-align: center;
-        place-content: center;
-        font-size: 24px;
-        width: 100%;
-        height: 100%;
+    &__overlay {
         position: absolute;
         top: 0;
         left: 0;
-        color: #5553c2;
-        background: rgba(#ffff, .7);
+        width: 100%;
+        height: 100%;
+        z-index: 2;
         display: none;
-
+        place-content: center;
+        opacity: .5;
+        color: #ffffff;
+        font-size: 24px;
+        text-transform: uppercase;
     }
 
 
@@ -469,3 +468,18 @@ body {
     transform: rotate3d(1, 1, 0, 45deg);
     }
   }
+
+//   Resulkt
+
+.result {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 250px;
+
+    &__wrapp {
+        text-align: center;
+    }
+}

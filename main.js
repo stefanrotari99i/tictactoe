@@ -262,9 +262,15 @@ function change_sta(id){
         array[face][new_id]=1;
         $('#'+id+" .game__item").addClass("game__item game__item-x");
         let winnig=checkState(face);
-        if(winnig==1){alert("X win on "+face+" face");};
-        if(winnig==-1){alert("Draw");};
-        if(winnig==2){alert("O win on "+face+" face");};
+        if(winnig==1){
+            $('#face-'+face+' .game__overlay').css({'display':'grid','background-color':'#de2828'}).text('Player 1 Won');
+        };
+        if(winnig==-1){
+            $('#face-'+face+' .game__overlay').css({'display':'grid','background-color':'#deb728'}).text('Draw');
+        };
+        if(winnig==2){
+            $('#face-'+face+' .game__overlay').css({'display':'grid','background-color':'#28de52'}).text('Player 2 Won');
+        };
         state=2;
         if(auto){
         let id_= findBestMove(face);
@@ -279,9 +285,15 @@ function change_sta(id){
         array[face][new_id]=2;
         $('#'+id+" .game__item").addClass("game__item game__item-o");
         let winnig=checkState(face);
-        if(winnig==1){alert("X win on "+face+" face");};
-        if(winnig==-1){alert("Draw");};
-        if(winnig==2){alert("O win on "+face+" face");};
+        if(winnig==1){
+            $('#face-'+face+' .game__overlay').css({'display':'grid','background-color':'#de2828'}).text('Player 1 Won');
+        };
+        if(winnig==-1){
+            $('#face-'+face+' .game__overlay').css({'display':'grid','background-color':'#deb728'}).text('Draw');
+        };
+        if(winnig==2){
+            $('#face-'+face+' .game__overlay').css({'display':'grid','background-color':'#28de52'}).text('Player 2 Won');
+        };
         state=1;
     return;
     }

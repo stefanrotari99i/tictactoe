@@ -15,6 +15,20 @@
 
 </head>
 <body>
+    <div class="result">
+        <div class="result__wrapp">
+            <h3 class="result__title">Player 1</h3>
+            <span class="result__Score">Win: 0</span>
+        </div>
+        <div class="result__wrapp">
+            <h3 class="result__title">Draw</h3>
+            <span class="result__Score">2</span>
+        </div>
+        <div class="result__wrapp">
+            <h3 class="result__title">Player 2</h3>
+            <span class="result__Score">Win: 2</span>
+        </div>
+    </div>
     <div class="chose-oponent">
         <img src="/opponent.png" alt="" class="chose-oponent__img">
     </div>
@@ -70,10 +84,14 @@
                 <div class="player__o"></div>
             </div>
         </div>
+
             <div class="container">
                 <div id="cube" class="cube">
                   <div class="face top">
-                    <ul class="game">
+                    <ul class="game" id="face-4">
+                        <div class="game__overlay">
+                            Won
+                        </div>
                         <li class="game__item-wrapp" id="36">
                             <div class="game__item "></div>
                         </li>
@@ -104,7 +122,10 @@
                     </ul>
                   </div>
                   <div class="face bottom">
-                    <ul class="game">
+                    <ul class="game" id="face-1">
+                        <div class="game__overlay">
+                            Won
+                        </div>
                         <li class="game__item-wrapp" id="9">
                             <div class="game__item "></div>
                         </li>
@@ -135,7 +156,10 @@
                     </ul>
                   </div>
                   <div class="face left">
-                    <ul class="game">
+                    <ul class="game" id="face-2">
+                        <div class="game__overlay">
+                            Won
+                        </div>
                         <li class="game__item-wrapp" id="18">
                             <div class="game__item "></div>
                         </li>
@@ -166,7 +190,10 @@
                     </ul>
                   </div>
                   <div class="face right">
-                    <ul class="game">
+                    <ul class="game" id="face-3">
+                        <div class="game__overlay">
+                            Won by David!
+                        </div>
                         <li class="game__item-wrapp" id="27">
                             <div class="game__item "></div>
                         </li>
@@ -197,7 +224,10 @@
                     </ul>
                   </div>
                   <div class="face front">
-                    <ul class="game">
+                    <ul class="game" id="face-0">
+                        <div class="game__overlay">
+                            Won by David!
+                        </div>
                         <li class="game__item-wrapp" id="0">
                             <div class="game__item "></div>
                         </li>
@@ -228,7 +258,10 @@
                     </ul>
                   </div>
                   <div class="face back">
-                    <ul class="game">
+                    <ul class="game" id="face-5">
+                        <div class="game__overlay">
+                            Won by David!
+                        </div>
                         <li class="game__item-wrapp" id="45">
                             <div class="game__item "></div>
                         </li>
