@@ -271,19 +271,19 @@ function change_winner(){
         if(get_winner()==0){
             $("#player_1").css("color","green");
             $("#player_2").css("color","red");
-            $("#won-alert").fadeIn(400);
+            $("#won-alert").fadeIn(400).css('display','flex');
         }
         else{
             if(get_winner()==1){
 
             $("#player_2").css("color","green");
             $("#player_1").css("color","red");
-            $("#lose-alert").fadeIn(400);
+            $("#lose-alert").fadeIn(400).css('display','flex');
         }
             else{
                 $("#player_1").css("color","red");
                 $("#player_2").css("color","red");
-                $("#draw-alert").fadeIn(400);
+                $("#draw-alert").fadeIn(400).css('display','flex');
             }
         } 
 
