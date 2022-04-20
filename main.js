@@ -4,6 +4,8 @@ for(let i=0; i<6; i++) {
 }
 var state=1;
 var auto=false;
+var game=[0,0,0];
+
 //function is move left
 function is_move_left(j){
     for(var i=0;i<9;i++){
@@ -263,12 +265,18 @@ function change_sta(id){
         $('#'+id+" .game__item").addClass("game__item game__item-x");
         let winnig=checkState(face);
         if(winnig==1){
+            game[0]=game[0]+1;
+            $("#player_1").text("Win: " + game[0]);
             $('#face-'+face+' .game__overlay').css({'display':'grid','background-color':'#de2828'}).text('Player 1 Won');
         };
         if(winnig==-1){
+            game[2]=game[2]+1;
+            $("#draw").text(game[2]);
             $('#face-'+face+' .game__overlay').css({'display':'grid','background-color':'#deb728'}).text('Draw');
         };
         if(winnig==2){
+            game[1]=game[1]+1;
+            $("#player_2").text("Win: " + game[1]);
             $('#face-'+face+' .game__overlay').css({'display':'grid','background-color':'#28de52'}).text('Player 2 Won');
         };
         state=2;
@@ -286,12 +294,18 @@ function change_sta(id){
         $('#'+id+" .game__item").addClass("game__item game__item-o");
         let winnig=checkState(face);
         if(winnig==1){
+            game[0]=game[0]+1;
+            $("#player_1").text("Win: " + game[0]);
             $('#face-'+face+' .game__overlay').css({'display':'grid','background-color':'#de2828'}).text('Player 1 Won');
         };
         if(winnig==-1){
+            game[2]=game[2]+1;
+            $("#draw").text(game[2]);
             $('#face-'+face+' .game__overlay').css({'display':'grid','background-color':'#deb728'}).text('Draw');
         };
         if(winnig==2){
+            game[1]=game[1]+1;
+            $("#player_2").text("Win: " + game[1]);
             $('#face-'+face+' .game__overlay').css({'display':'grid','background-color':'#28de52'}).text('Player 2 Won');
         };
         state=1;
