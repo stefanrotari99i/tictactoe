@@ -359,7 +359,7 @@ $(document).ready(function(){
 
     $(".btn--play").click(function(){
     state=1;
-    for(let i=0;i<53;i++)
+    for(let i=0;i<=53;i++)
         $("#"+i+" .game__item").removeClass("game__item-x game__item-o");
 
     for(let i=0; i<6; i++) {
