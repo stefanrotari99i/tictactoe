@@ -1,7 +1,6 @@
 body {
-  background: #1e0f4f;
-  background: -webkit-gradient(linear, left bottom, left top, from(#1e0f4f), to(#3e2da5));
-  background: linear-gradient(0deg, #1e0f4f 0%, #3e2da5 100%);
+  background: #4836b4;
+  background: radial-gradient(circle, #4836b4 21%, #1e0f4f 100%);
   overflow: hidden;
   width: 100vw;
   height: 100vh;
@@ -16,7 +15,7 @@ body {
 }
 body::before {
   content: "";
-  opacity: 0.3;
+  opacity: 0.1;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -39,16 +38,18 @@ body::before {
 .game {
   width: 300px;
   height: 300px;
-  background: #6649c4;
+  background: #9982e1;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 15px 1fr 15px 1fr;
+  -ms-grid-columns: 1fr 2px 1fr 2px 1fr;
   grid-template-columns: 1fr 1fr 1fr;
-  -ms-grid-rows: 1fr 15px 1fr 15px 1fr;
+  -ms-grid-rows: 1fr 2px 1fr 2px 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  padding: 15px;
   position: relative;
-  gap: 15px;
+  gap: 2px;
+  border: 2px solid #9982e1;
+  -webkit-box-shadow: -1px -1px 200px #9982e1;
+          box-shadow: -1px -1px 200px #9982e1;
 }
 
 .game > *:nth-child(1) {
@@ -96,16 +97,17 @@ body::before {
   -ms-grid-column: 5;
 }
 .game::after {
-  content: "";
-  width: 85%;
-  height: 4px;
-  border-radius: 50%;
-  background-color: #fff;
+  content: "Won by David";
+  text-align: center;
+  place-content: center;
+  font-size: 24px;
+  width: 100%;
+  height: 100%;
   position: absolute;
-  top: 90px;
-  left: 40px;
-  -webkit-animation: cut 0.5s cubic-bezier(0.42, 0.97, 0.52, 1.49);
-          animation: cut 0.5s cubic-bezier(0.42, 0.97, 0.52, 1.49);
+  top: 0;
+  left: 0;
+  color: #5553c2;
+  background: rgba(255, 255, 255, 0.7);
   display: none;
 }
 .game__item-wrapp {
@@ -114,10 +116,11 @@ body::before {
   display: grid;
   place-content: center;
   cursor: pointer;
-  border-radius: 15px;
   position: relative;
   -webkit-transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -webkit-box-shadow: 0px 0px 50px #9982e1;
+          box-shadow: 0px 0px 50px #9982e1;
 }
 .game__item {
   width: 70px;
@@ -296,6 +299,9 @@ body::before {
   gap: 20px;
   z-index: 100;
   display: none;
+  border-radius: 15% 20% 15% 20%;
+  -webkit-box-shadow: inset -1px -1px 20px #9982e1;
+          box-shadow: inset -1px -1px 20px #9982e1;
 }
 .alert__img {
   width: 40%;
